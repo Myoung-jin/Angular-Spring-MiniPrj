@@ -1,4 +1,4 @@
-package com.pilot.MiniPr;
+package com.pilot.minipr;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

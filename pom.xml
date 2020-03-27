@@ -16,6 +16,16 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<undertow.version>2.0.29.Final</undertow.version>
+		<java.jwt.version>3.9.0</java.jwt.version>
+		<guava.version>28.2-jre</guava.version>
+		<log4jdbc.version>0.2.7</log4jdbc.version>
+		<commons.lang.version>3.9</commons.lang.version>
+		<commons.io.version>2.6</commons.io.version>
+		<jackson.datatype.version>2.10.1</jackson.datatype.version>
+		<json.version>20190722</json.version>
 	</properties>
 
 	<dependencies>
@@ -23,14 +33,18 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+		<!-- jdbc -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+		<!-- //jdbc -->
+		<!-- security -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.springframework.boot</groupId> -->
+<!-- 			<artifactId>spring-boot-starter-security</artifactId> -->
+<!-- 		</dependency> -->
+		<!-- //security -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -72,7 +86,71 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- MYSQL : https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+		</dependency>
+		<!-- Security : https://mvnrepository.com/artifact/com.google.guava/guava -->
+		<dependency>
+		    <groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+		    <version>${guava.version}</version>
+		</dependency>
+		<!-- String Util: https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		</dependency>
+		<!-- QUREYDSL-APT: https://mvnrepository.com/artifact/com.querydsl/querydsl-apt -->
+		<dependency>
+		    <groupId>com.querydsl</groupId>
+		    <artifactId>querydsl-apt</artifactId>
+		</dependency>
+		<!-- QUREYDSL-JPA: https://mvnrepository.com/artifact/com.querydsl/querydsl-apt -->
+		<dependency>
+		    <groupId>com.querydsl</groupId>
+		    <artifactId>querydsl-jpa</artifactId>
+		</dependency>
+		<!-- LOG BACK : https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+<!-- 		<dependency> -->
+<!-- 		    <groupId>ch.qos.logback</groupId> -->
+<!-- 		    <artifactId>logback-classic</artifactId> -->
+<!-- 		    <scope>test</scope> -->
+<!-- 		</dependency> -->
+		<!-- junit -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>android-json</artifactId>
+					<groupId>com.vaadin.external.google</groupId>
+				</exclusion>
+				<exclusion>
+					<groupId>junit</groupId>
+					<artifactId>junit</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- //junit -->		
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>${json.version}</version>
+		</dependency>	
+		<dependency>
+			<groupId>io.undertow</groupId>
+			<artifactId>undertow-core</artifactId>
+			<version>${undertow.version}</version>
+		</dependency>			
 	</dependencies>
+	
 
 	<build>
 		<plugins>
